@@ -1,7 +1,7 @@
 # Hardened Proof of Concept (PoC) of D/Invoke Process Injection logic
 
-This technique implementation uses SharpSploit v1.6 features implemented by @theRealWover and @FuzzySec.
-Initial stager code credits go to @RastaMouse for providing Proof of Concept in his recent blogpost: https://rastamouse.me/blog/process-injection-dinvoke/.
+This technique implementation uses SharpSploit v1.6 features implemented by @theRealWover and @FuzzySec.  
+Initial code credits go to @RastaMouse for providing Proof of Concept in his recent blogpost: https://rastamouse.me/blog/process-injection-dinvoke/.
 
 
 Provided PoC indeed clears up PE import table, where only `_CorExeMain` is seen, and no classic chain of `OpenProcess / VirtualAllocEx / WriteProcessMemory / CreateRemoteThread` used in this case for injection.
