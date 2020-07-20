@@ -1,12 +1,10 @@
 # Hardened Proof of Concept (PoC) of D/Invoke Process Injection logic
 
-This technique implementation uses SharpSploit v1.6 features implemented by @theRealWover and @FuzzySec.  
-Initial code credits go to @RastaMouse for providing Proof of Concept in his recent blogpost: https://rastamouse.me/blog/process-injection-dinvoke/.
+This technique implementation uses SharpSploit v1.6 features created by @theRealWover and @FuzzySec.  
+Initial code credits go to @RastaMouse for providing Proof of Concept in his blogpost: https://rastamouse.me/blog/process-injection-dinvoke/.
 
 
-Provided PoC indeed clears up PE import table, where only `_CorExeMain` is seen, and no classic chain of `OpenProcess / VirtualAllocEx / WriteProcessMemory / CreateRemoteThread` used in this case for injection.
-
-<img src=".img/imports.png" width="500">
+Provided PoC unhooks Win API methods used and clears import table by never describing used API calls (whereas P/Invoke imports necessary API calls during runtime).
 
 This repository supplements previously mentioned work with:
 
@@ -16,11 +14,11 @@ This repository supplements previously mentioned work with:
 
 # 1. Additional obfuscation
 
-Still, API chain is observed in raw PE file itself as a strings:
+Still, any of API methods out of described chain appears in raw PE file as a string:
 
 <img src=".img/strings.png" width="700">
 
-In order to avoid this behavior change of delegate names is done and base64 encoding of API strings during lookup is performed.
+In order to avoid this behavior it is possible to change delegate names and implement base64 encoding of API strings.
 
 ## A. Change of delegate names.
 Intended D/Invoke way:
@@ -59,16 +57,15 @@ PE after obfuscation:
 
 ## Show Pid
 
-Most obvious way to see injection is to display banner displaying own process ID.
-This may done by `showPidTests/show_Pidx64.bin.b64` as seen in image above.
+Most obvious way to see successful injection is to display banner with current process ID.
+This may done by `Tests_showPid/show_Pidx64.bin.b64` as seen in image above.
 
 <img src=".img/showpid_notepad.png" width="700">
 
 
 ## Covenant agent
 
-Provided shellcode is build manually using donut's Python module and callbacks to `192.168.56.110:80` using DefaultHTTPProfile.
-
+Provided shellcode is build manually using donut's Python module and makes callback to `192.168.56.110:80` using DefaultHTTPProfile.
 Execution with up to date fully functional Windows Defender:
 
 <img src=".img/covenant_agent_exec.png" width="700">
