@@ -6,7 +6,7 @@ Additional credits goes to @RastaMouse for providing Proof of Concept.
 
 Provided PoC indeed clears up PE import table, where only "_CorExeMain" is seen, and no classic OpenProcess / VirtualAllocEx / WriteProcessMemory / CreateRemoteThread used for process injection.
 
-<img src="img/imports.png" width="700">
+<img src="img/imports.png" width="500">
 
 This repository supplements previously mentioned work with:
 
