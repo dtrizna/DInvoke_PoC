@@ -1,0 +1,9 @@
+C:\Users\dtrizna\source\repos\DInvoke_PoC\DInvoke_PoC\bin\Debug\DInvoke_PoC.exe
+C:\Users\dtrizna\source\repos\DInvoke_PoC\DInvoke_PoC\bin\Debug\DInvoke_PoC.pdb
+C:\Users\dtrizna\source\repos\DInvoke_PoC\DInvoke_PoC\bin\Debug\SharpSploit.dll
+C:\Users\dtrizna\source\repos\DInvoke_PoC\DInvoke_PoC\bin\Debug\System.Management.Automation.dll
+C:\Users\dtrizna\source\repos\DInvoke_PoC\DInvoke_PoC\bin\Debug\SharpSploit.pdb
+C:\Users\dtrizna\source\repos\DInvoke_PoC\DInvoke_PoC\bin\Debug\SharpSploit.xml
+C:\Users\dtrizna\source\repos\DInvoke_PoC\DInvoke_PoC\obj\Debug\DInvoke_PoC.csproj.CopyComplete
+C:\Users\dtrizna\source\repos\DInvoke_PoC\DInvoke_PoC\obj\Debug\DInvoke_PoC.exe
+C:\Users\dtrizna\source\repos\DInvoke_PoC\DInvoke_PoC\obj\Debug\DInvoke_PoC.pdb
